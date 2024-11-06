@@ -75,3 +75,41 @@ function openModal(edit = false, index = 0) {
         id = undefined;
     }
 }
+function editItem(index) {
+    openModal(true, index);
+}
+
+function deleteItem(index) {
+    itens.splice(index, 1);
+    setItensBD(itens);
+    loadItens();
+}
+
+btnSalvar.onclick = (e) => {
+    if (sNome.value == "" || sEmail.value == "" || sIdade.value == "" || sAtividades.value == "") {
+        return;
+    }
+
+    e.preventDefault();
+
+    if (id !== undefined) {
+        itens[id].nome = sNome.value;
+        itens[id].email = sEmail.value;
+        itens[id].idade = sIdade.value;
+        itens[id].atividades = sAtividades.value;
+    } else {
+        itens.push({
+            nome: sNome.value,
+            email: sEmail.value,
+            idade: sIdade.value,
+            atividades: sAtividades.value
+        });
+    }
+
+    setItensBD(itens);
+    modal.classList.remove("active");
+    loadItens();
+    id = undefined;
+};
+
+loadItens();
