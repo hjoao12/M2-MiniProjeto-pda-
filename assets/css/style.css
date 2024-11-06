@@ -176,3 +176,198 @@ tbody tr td {
 tbody tr td.acao {
     text-align: center;
 }
+.modal-container {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.modal-container.active {
+    display: flex;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    width: 50%;
+    transition: all 0.3s ease;
+}
+
+.modal label {
+    font-size: 14px;
+    width: 100%;
+}
+
+.modal input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.modal button {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(57, 57, 226);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.modal button.close {
+    background-color: transparent;
+    color: red;
+}
+
+.active {
+    display: flex;
+}
+
+.active .modal {
+    animation: modal .4s;
+}
+
+td button {
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+td button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+td button:focus {
+    outline: none;
+}
+
+td button i {
+    font-size: 25px;
+}
+
+td button i:first-child {
+    margin-right: 10px;
+}
+
+.modal label {
+    font-size: 14px;
+    margin-top: 10px;
+    display: block;
+}
+
+.modal input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.modal button {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: #2b1055;
+    color: white;
+    font-size: 16px;
+    width: 100%;
+}
+
+@media (max-width: 700px) {
+    body {
+        font-size:    10px;
+    }
+
+    .header span {
+        font-size: 15px;
+    }
+
+    #new {
+        padding: 5px;
+        font-size: 10px;
+    }
+
+    thead tr th.acao {
+        width: auto!important;
+    }
+
+    td button i {
+        font-size: 20px!important;
+    }
+
+    td button i:first-child {
+        margin-right: 0;
+    }
+
+    .modal {
+        width: 90%!important;
+    }
+
+    .modal label {
+        font-size: 12px!important;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+    
+    .header span {
+        font-size: 15px;
+    }
+    
+    #new {
+        width: 30px;
+        height: 30px;
+    }
+    
+    #new i {
+        font-size: 16px;
+    }
+    
+    .modal {
+        width: 90%!important;
+    }
+    
+    .modal label {
+        font-size: 12px!important;
+    }
+
+    table {
+        max-width: 100%;
+    }
+
+    tbody tr td {
+        padding: 4px;
+        font-size: 12px;
+    }
+
+    thead tr th {
+        padding: 4px;
+        font-size: 12px;
+    }
+
+    .divTable {
+        overflow-x: auto;
+    }
+    
+    .modal input {
+        font-size: 12px;
+    }
+}
