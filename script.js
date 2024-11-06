@@ -20,3 +20,20 @@ function loadItens() {
         insertItem(item, index);
     });
 }
+function insertItem(item, index) {
+    const tr = document.createElement("tr");
+
+    tr.innerHTML = `
+        <td>${item.nome}</td>
+        <td>${item.email}</td>
+        <td>${item.idade}</td>
+        <td>${item.atividades}</td>
+        <td class="acao">
+            <button onclick="editItem(${index})"><i class="fas fa-edit"></i></button>
+        </td>
+        <td class="acao">
+            <button onclick="deleteItem(${index})"><i class="fas fa-trash"></i></button>
+        </td>
+    `;
+    tbody.appendChild(tr);
+}
