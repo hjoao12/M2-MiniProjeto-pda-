@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Verde e Sustentável</title>
-    <link href="assets/img/R (1).png" rel="stylesheet" type="text/css" />
+    <link href="./assets/style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
@@ -15,3 +15,34 @@
             <img src="assets/img/R (1).png" alt="Árvore Logo">
             <h1 class="text">ONG: Verde e Sustentável</h1>
         </div>
+
+        <div class="header">
+            <span style="color: black;">Cadastro de Voluntários</span>
+            <button onclick="openModal()" id="new"><i class="fa-solid fa-circle-plus"  style="color: #2b1055;"></i></button>
+        </div>
+
+        <form class="filter-form">
+            <label for="filter-name">Filtrar pelo nome:</label>
+            <input type="text" id="filter-name" placeholder="Digite o nome">
+        </form>
+        
+        <div class="divTable">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Idade</th>
+                        <th>atividades</th>
+                        <th class="acao">Editar</th>
+                        <th class="acao">Excluir</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="modal-container">
+            <div class="modal">
