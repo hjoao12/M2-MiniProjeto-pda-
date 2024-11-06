@@ -37,3 +37,41 @@ function insertItem(item, index) {
     `;
     tbody.appendChild(tr);
 }
+filterInput.addEventListener("input", function() {
+    const filterValue = this.value.toLowerCase().trim();
+
+    const filteredItems = itens.filter(item => {
+        return item.nome.toLowerCase().includes(filterValue);
+    });
+
+    tbody.innerHTML = "";
+
+    filteredItems.forEach((item, index) => {
+        insertItem(item, index);
+        tbody.lastChild.classList.add("filtered-row");
+    });
+});
+
+function openModal(edit = false, index = 0) {
+    modal.classList.add("active");
+
+    modal.onclick = (e) => {
+        if (e.target.className.indexOf("modal-container") !== -1) {
+            modal.classList.remove("active");
+        }
+    };
+
+    if (edit) {
+        sNome.value = itens[index].nome;
+        sEmail.value = itens[index].email;
+        sIdade.value = itens[index].idade;
+        sAtividades.value = itens[index].atividades;
+        id = index;
+    } else {
+        sNome.value = "";
+        sEmail.value = "";
+        sIdade.value = "";
+        sAtividades.value = "";
+        id = undefined;
+    }
+}
